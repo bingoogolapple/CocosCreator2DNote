@@ -48,6 +48,7 @@ Thumbs.db
 # VS Code files
 #//////////////////////////
 
-# .vscode/
+.vscode/
+!.vscode/settings.json
 !.vscode/launch.json
-!.vscode/launch.json
+!.vscode/tasks.json
