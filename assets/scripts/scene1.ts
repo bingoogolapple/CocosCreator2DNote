@@ -133,6 +133,8 @@ export default class Scene1 extends cc.Component {
       // cc.audioEngine.stopMusic()
     } else if (data === "open-scene2") {
       cc.director.loadScene("scene2")
+    } else if (data === "open-scene3") {
+      cc.director.loadScene("scene3")
     }
   }
 
