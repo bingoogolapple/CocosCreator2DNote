@@ -97,6 +97,9 @@ export default class Scene1 extends cc.Component {
     } else if (data === "update-font") {
       cc.log("修改字体大小")
       this.infoLabel.fontSize++
+    } else if (data === "open-url") {
+      cc.log("打开网址")
+      cc.sys.openURL("https://github.com/bingoogolapple/CocosCreatorNote")
     }
   }
 
