@@ -8,9 +8,16 @@ export default class Scene1 extends cc.Component {
   bgFrame1: cc.SpriteFrame
   bgFrame2: cc.SpriteFrame
   bgFrame3: cc.SpriteFrame
+
   infoLabel: cc.Label
   @property(cc.ProgressBar)
   progressBar: cc.ProgressBar
+  @property(cc.Prefab)
+  prefabOne: cc.Prefab
+  @property(cc.AudioClip)
+  effectAc: cc.AudioClip
+  @property(cc.AudioClip)
+  musicAc: cc.AudioClip
 
   onLoad() {
     cc.log("onLoad")
@@ -43,6 +50,7 @@ export default class Scene1 extends cc.Component {
         /**
          * 1、如果不在代码里加载资源，一般不要放到 assets/resources 文件夹下，否则即使后续没有用该资源也会被打包到发布包中
          * 2、代码里加载资源必须要求资源在 assets/resources 文件夹下，代码里加载时省去 assets/resources 前缀
+         * 如果已经被释放，再次重新加载后展示不出来？
          */
         cc.loader.loadRes(
           "img/bg2",
@@ -100,6 +108,31 @@ export default class Scene1 extends cc.Component {
     } else if (data === "open-url") {
       cc.log("打开网址")
       cc.sys.openURL("https://github.com/bingoogolapple/CocosCreatorNote")
+    } else if (data === "add-plane") {
+      let prefabOneNode = cc.instantiate(this.prefabOne)
+      prefabOneNode.parent = this.node
+      prefabOneNode.setPosition(
+        -480 + 250 + Math.random() * (960 - 500),
+        -320 + 50 + Math.random() * (640 - 100)
+      )
+      prefabOneNode.getChildByName("desc").getComponent(cc.Label).string =
+        "飞机" + Math.random()
+    } else if (data === "play-effect") {
+      cc.log("播放音效")
+      let audioId = cc.audioEngine.playEffect(this.effectAc, false)
+      cc.audioEngine.setEffectsVolume(0.5)
+      cc.audioEngine.stopEffect(audioId)
+      // cc.audioEngine.stopAll()
+      // cc.audioEngine.stopAllEffects()
+      // cc.audioEngine.play(this.effectAc, false, 1) // 播放音频
+    } else if (data === "play-music") {
+      cc.log("播放背景音乐")
+      cc.audioEngine.playMusic(this.musicAc, false)
+      cc.audioEngine.setMusicVolume(0.2)
+      // cc.audioEngine.isMusicPlaying()
+      // cc.audioEngine.stopMusic()
+    } else if (data === "open-scene2") {
+      cc.director.loadScene("scene2")
     }
   }
 
