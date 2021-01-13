@@ -3,21 +3,33 @@ const { ccclass, property } = cc._decorator
 @ccclass
 export default class Scene1 extends cc.Component {
   @property(cc.Sprite)
-  bgSprite: cc.Sprite = null
+  bgSprite: cc.Sprite
   @property(cc.SpriteFrame)
-  bgFrame1: cc.SpriteFrame = null
-  bgFrame2: cc.SpriteFrame = null
-  bgFrame3: cc.SpriteFrame = null
+  bgFrame1: cc.SpriteFrame
+  bgFrame2: cc.SpriteFrame
+  bgFrame3: cc.SpriteFrame
+  infoLabel: cc.Label
+  @property(cc.ProgressBar)
+  progressBar: cc.ProgressBar
 
   onLoad() {
     cc.log("onLoad")
+    this.infoLabel = this.node.getChildByName("info").getComponent(cc.Label)
+    this.progressBar.progress = 0
   }
 
   start() {
     cc.log("start")
   }
 
-  update(dt: number) {}
+  // 1s 执行 60 次
+  update(dt: number) {
+    let progress = this.progressBar.progress + dt / 5
+    if (progress >= 1) {
+      progress = 0
+    }
+    this.progressBar.progress = progress
+  }
 
   onBtnClick(target: cc.Event.EventTouch, data: string) {
     if (data === "bg1") {
@@ -82,6 +94,9 @@ export default class Scene1 extends cc.Component {
           cc.log(rect)
         }
       )
+    } else if (data === "update-font") {
+      cc.log("修改字体大小")
+      this.infoLabel.fontSize++
     }
   }
 
