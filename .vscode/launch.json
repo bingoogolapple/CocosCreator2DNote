@@ -21,7 +21,7 @@
       "runtimeExecutable": "nodemon",
       "args": [
         "--watch",
-        "assets/Script",
+        "assets/scripts",
         "--ext",
         "js ts",
         "--exec",

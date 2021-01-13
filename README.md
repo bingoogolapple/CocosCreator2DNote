@@ -8,13 +8,13 @@
 npm i -g nodemon
 ```
 
-- 监听到 assets/Script 目录中的 js 和 ts 文件变化后自动重新编译并刷新浏览器
+- 监听到 assets/scripts 目录中的 js 和 ts 文件变化后自动重新编译并刷新浏览器
 
 ```shell
-nodemon --watch assets/Script --ext "js ts" --exec "curl http://localhost:7456/update-db"
+nodemon --watch assets/scripts --ext "js ts" --exec "curl http://localhost:7456/update-db"
 ```
 
-- 也可以配置到 tasks.json 中
+- 也可以配置到 tasks.json 中。command + shift + B，然后选择 autorefresh
 
 ```json
 {
@@ -26,7 +26,7 @@ nodemon --watch assets/Script --ext "js ts" --exec "curl http://localhost:7456/u
       "command": "nodemon",
       "args": [
         "--watch",
-        "assets/Script",
+        "assets/scripts",
         "--ext",
         "js ts",
         "--exec",
@@ -69,7 +69,7 @@ nodemon --watch assets/Script --ext "js ts" --exec "curl http://localhost:7456/u
       "runtimeExecutable": "nodemon",
       "args": [
         "--watch",
-        "assets/Script",
+        "assets/scripts",
         "--ext",
         "js ts",
         "--exec",
