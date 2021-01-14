@@ -19,6 +19,16 @@ export default class Scene1 extends cc.Component {
   @property(cc.AudioClip)
   musicAc: cc.AudioClip
 
+  @property({ type: sp.Skeleton, tooltip: "自定义提示文案" })
+  skeAnim: sp.Skeleton
+
+  @property
+  str: string = ""
+  @property
+  bool: boolean = true
+  @property
+  num: number = 0
+
   onLoad() {
     cc.log("onLoad")
     this.infoLabel = this.node.getChildByName("info").getComponent(cc.Label)
@@ -135,6 +145,13 @@ export default class Scene1 extends cc.Component {
       cc.director.loadScene("scene2")
     } else if (data === "open-scene3") {
       cc.director.loadScene("scene3")
+    } else if (data === "skeleton-run") {
+      this.skeAnim.clearTrack(0)
+      this.skeAnim.setAnimation(0, "run", true)
+    } else if (data === "skeleton-dead") {
+      this.skeAnim.clearTrack(0)
+      this.skeAnim.setAnimation(0, "dead", false)
+      this.skeAnim.addAnimation(0, "normalAttack", true, 2)
     }
   }
 

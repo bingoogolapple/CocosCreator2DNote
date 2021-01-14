@@ -16,4 +16,7 @@ export default class GrandChild extends cc.Component {
       console.log("GrandChild 其他组件也能收到的自定义事件", e)
     })
   }
+  testOtherScriptCall(msg: string) {
+    cc.log("testOtherScriptCall", msg, this)
+  }
 }
