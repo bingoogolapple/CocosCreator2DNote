@@ -7,7 +7,7 @@ export default class Scene5 extends cc.Component {
   carComponent: CarComponent = null
 
   onLoad() {
-    this.carNode = cc.find("Canvas/小车")
+    this.carNode = cc.find("Canvas/游戏主画面/小车")
     this.carComponent = this.carNode.getComponent("CarComponent")
   }
 
