@@ -4729,7 +4729,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "btn-skeleton-run",
+    "_name": "btn-open-scene4",
     "_objFlags": 0,
     "_parent": {
       "__id__": 8
@@ -4791,7 +4791,7 @@
     "_is3DNode": false,
     "_groupIndex": 0,
     "groupIndex": 0,
-    "_id": "57B1TpqVZK0KorF5CJu6V9"
+    "_id": "d5cmszsddNAKxJQBlOu3U6"
   },
   {
     "__type__": "cc.Node",
@@ -4860,7 +4860,7 @@
     "_is3DNode": false,
     "_groupIndex": 0,
     "groupIndex": 0,
-    "_id": "474WWNWgRMwp3bkQGuqN/h"
+    "_id": "59L6M9P6lJ667meuN6xUrd"
   },
   {
     "__type__": "cc.Node",
@@ -4922,7 +4922,7 @@
     "_is3DNode": false,
     "_groupIndex": 0,
     "groupIndex": 0,
-    "_id": "5dmqp29gtG0JzPb/u+vh7z"
+    "_id": "56jevmNohM5b1fOsVKylSu"
   },
   {
     "__type__": "cc.Label",
@@ -4939,8 +4939,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "skeleton-run",
-    "_N$string": "skeleton-run",
+    "_string": "打开场景4",
+    "_N$string": "打开场景4",
     "_fontSize": 20,
     "_lineHeight": 40,
     "_enableWrapText": false,
@@ -4955,7 +4955,7 @@
     "_N$fontFamily": "Arial",
     "_N$overflow": 2,
     "_N$cacheMode": 1,
-    "_id": "21jNomP0tAOa7U0gbbRtel"
+    "_id": "1dPRKgYUFEUawfHRJTsVnC"
   },
   {
     "__type__": "cc.Sprite",
@@ -4987,7 +4987,7 @@
     "_fillRange": 0,
     "_isTrimmedMode": true,
     "_atlas": null,
-    "_id": "6dFmgaWOFNPaVtPr5GOuMD"
+    "_id": "d4xr2HaEpHDoST/5S8AqMd"
   },
   {
     "__type__": "cc.Widget",
@@ -5014,7 +5014,7 @@
     "_isAbsVerticalCenter": true,
     "_originalWidth": 100,
     "_originalHeight": 40,
-    "_id": "0256rb/G9B74Ew+wUx+zF4"
+    "_id": "e4L03j9qtAq4tbroK0C+XF"
   },
   {
     "__type__": "cc.Button",
@@ -5100,7 +5100,7 @@
     "_N$target": {
       "__id__": 98
     },
-    "_id": "d9qUja0VNDWbtypOUqaCG4"
+    "_id": "86UocdeiRKia88DjFamtcw"
   },
   {
     "__type__": "cc.ClickEvent",
@@ -5110,11 +5110,11 @@
     "component": "",
     "_componentId": "e1b90/rohdEk4SdmmEZANaD",
     "handler": "onBtnClick",
-    "customEventData": "skeleton-run"
+    "customEventData": "open-scene4"
   },
   {
     "__type__": "cc.Node",
-    "_name": "btn-skeleton-dead",
+    "_name": "btn-skeleton-run",
     "_objFlags": 0,
     "_parent": {
       "__id__": 8
@@ -5176,7 +5176,7 @@
     "_is3DNode": false,
     "_groupIndex": 0,
     "groupIndex": 0,
-    "_id": "349vXWDyFLDrFMUkKuXu/v"
+    "_id": "57B1TpqVZK0KorF5CJu6V9"
   },
   {
     "__type__": "cc.Node",
@@ -5245,7 +5245,7 @@
     "_is3DNode": false,
     "_groupIndex": 0,
     "groupIndex": 0,
-    "_id": "6eS2VgQG9NJZBf0P7MlsaX"
+    "_id": "474WWNWgRMwp3bkQGuqN/h"
   },
   {
     "__type__": "cc.Node",
@@ -5307,7 +5307,7 @@
     "_is3DNode": false,
     "_groupIndex": 0,
     "groupIndex": 0,
-    "_id": "39Tdhhbx5MaJKO+7zZcueg"
+    "_id": "5dmqp29gtG0JzPb/u+vh7z"
   },
   {
     "__type__": "cc.Label",
@@ -5324,8 +5324,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "skeleton-dead",
-    "_N$string": "skeleton-dead",
+    "_string": "skeleton-run",
+    "_N$string": "skeleton-run",
     "_fontSize": 20,
     "_lineHeight": 40,
     "_enableWrapText": false,
@@ -5340,7 +5340,7 @@
     "_N$fontFamily": "Arial",
     "_N$overflow": 2,
     "_N$cacheMode": 1,
-    "_id": "72ly+WFAFMr5afklgLJ1LS"
+    "_id": "21jNomP0tAOa7U0gbbRtel"
   },
   {
     "__type__": "cc.Sprite",
@@ -5372,7 +5372,7 @@
     "_fillRange": 0,
     "_isTrimmedMode": true,
     "_atlas": null,
-    "_id": "803lSYbDZOKINWmNMc+UCx"
+    "_id": "6dFmgaWOFNPaVtPr5GOuMD"
   },
   {
     "__type__": "cc.Widget",
@@ -5399,7 +5399,7 @@
     "_isAbsVerticalCenter": true,
     "_originalWidth": 100,
     "_originalHeight": 40,
-    "_id": "6alxSRL89Ea6GX5vjxS1+Y"
+    "_id": "0256rb/G9B74Ew+wUx+zF4"
   },
   {
     "__type__": "cc.Button",
@@ -5485,7 +5485,7 @@
     "_N$target": {
       "__id__": 106
     },
-    "_id": "983DS/jZFPWKBjMRffopYJ"
+    "_id": "d9qUja0VNDWbtypOUqaCG4"
   },
   {
     "__type__": "cc.ClickEvent",
@@ -5495,11 +5495,11 @@
     "component": "",
     "_componentId": "e1b90/rohdEk4SdmmEZANaD",
     "handler": "onBtnClick",
-    "customEventData": "skeleton-dead"
+    "customEventData": "skeleton-run"
   },
   {
     "__type__": "cc.Node",
-    "_name": "btn-open-scene3",
+    "_name": "btn-skeleton-dead",
     "_objFlags": 0,
     "_parent": {
       "__id__": 8
@@ -5561,7 +5561,7 @@
     "_is3DNode": false,
     "_groupIndex": 0,
     "groupIndex": 0,
-    "_id": "7dL+nn+bdOjbQDdhtLy1av"
+    "_id": "349vXWDyFLDrFMUkKuXu/v"
   },
   {
     "__type__": "cc.Node",
@@ -5630,7 +5630,7 @@
     "_is3DNode": false,
     "_groupIndex": 0,
     "groupIndex": 0,
-    "_id": "7bV37IkuBDJJf9V/SywjIc"
+    "_id": "6eS2VgQG9NJZBf0P7MlsaX"
   },
   {
     "__type__": "cc.Node",
@@ -5692,7 +5692,7 @@
     "_is3DNode": false,
     "_groupIndex": 0,
     "groupIndex": 0,
-    "_id": "06j4Bdd4BEQ6I6U4bN39lB"
+    "_id": "39Tdhhbx5MaJKO+7zZcueg"
   },
   {
     "__type__": "cc.Label",
@@ -5709,8 +5709,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "打开场景3",
-    "_N$string": "打开场景3",
+    "_string": "skeleton-dead",
+    "_N$string": "skeleton-dead",
     "_fontSize": 20,
     "_lineHeight": 40,
     "_enableWrapText": false,
@@ -5725,7 +5725,7 @@
     "_N$fontFamily": "Arial",
     "_N$overflow": 2,
     "_N$cacheMode": 1,
-    "_id": "4eo6+POuxKga5xKBDP1kys"
+    "_id": "72ly+WFAFMr5afklgLJ1LS"
   },
   {
     "__type__": "cc.Sprite",
@@ -5757,7 +5757,7 @@
     "_fillRange": 0,
     "_isTrimmedMode": true,
     "_atlas": null,
-    "_id": "63m0Cl/nJGBpDcQgIX1nfo"
+    "_id": "803lSYbDZOKINWmNMc+UCx"
   },
   {
     "__type__": "cc.Widget",
@@ -5784,7 +5784,7 @@
     "_isAbsVerticalCenter": true,
     "_originalWidth": 100,
     "_originalHeight": 40,
-    "_id": "4cueJ8UT1O85BGRagOLodp"
+    "_id": "6alxSRL89Ea6GX5vjxS1+Y"
   },
   {
     "__type__": "cc.Button",
@@ -5870,7 +5870,7 @@
     "_N$target": {
       "__id__": 114
     },
-    "_id": "dcVNfx3fFKXaATpmnh5GZi"
+    "_id": "983DS/jZFPWKBjMRffopYJ"
   },
   {
     "__type__": "cc.ClickEvent",
@@ -5880,7 +5880,7 @@
     "component": "",
     "_componentId": "e1b90/rohdEk4SdmmEZANaD",
     "handler": "onBtnClick",
-    "customEventData": "open-scene3"
+    "customEventData": "skeleton-dead"
   },
   {
     "__type__": "cc.Node",
