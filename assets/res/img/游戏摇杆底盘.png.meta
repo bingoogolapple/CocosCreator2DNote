@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.5",
+  "uuid": "72338046-e063-4610-b798-98d77cd33d35",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 100,
+  "height": 100,
+  "platformSettings": {},
+  "subMetas": {
+    "游戏摇杆底盘": {
+      "ver": "1.0.4",
+      "uuid": "e8867d9f-5939-4723-ab21-e223788c8348",
+      "rawTextureUuid": "72338046-e063-4610-b798-98d77cd33d35",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -1,
+      "offsetY": 0,
+      "trimX": 1,
+      "trimY": 2,
+      "width": 96,
+      "height": 96,
+      "rawWidth": 100,
+      "rawHeight": 100,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
