@@ -84,7 +84,8 @@ export default class Scene1 extends cc.Component {
          * 2、代码里加载资源必须要求资源在 assets/resources 文件夹下，代码里加载时省去 assets/resources 前缀
          * 如果已经被释放，再次重新加载后展示不出来？
          */
-        cc.loader.loadRes(
+        // cc.loader.loadRes(
+        cc.resources.load(
           "img/bg2",
           cc.SpriteFrame,
           (error: Error, resource: cc.SpriteFrame) => {
@@ -171,6 +172,8 @@ export default class Scene1 extends cc.Component {
       cc.director.loadScene("scene4")
     } else if (data === "open-scene5") {
       cc.director.loadScene("scene5")
+    } else if (data === "open-scene6") {
+      cc.director.loadScene("scene6")
     } else if (data === "skeleton-run") {
       this.skeAnim.clearTrack(0)
       this.skeAnim.setAnimation(0, "run", true)
@@ -231,7 +234,8 @@ export default class Scene1 extends cc.Component {
      * 1、每个场景有个「自动释放资源」选项，默认不勾选。勾选上后切换场景时会自动释放资源
      * 2、即使勾选了自动释放资源，切换场景时代码里加载的资源也不会自动释放。除非 cc.loader.setAutoRelease(url, true)
      */
-    cc.loader.releaseRes("img/bg2")
+    // cc.loader.releaseRes("img/bg2")
+    cc.resources.release("img/bg2")
     cc.loader.release("http://bgashare.bingoogolapple.cn/banner/imgs/17.png")
   }
   listenKeydown = () => {
