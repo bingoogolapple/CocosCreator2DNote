@@ -38,7 +38,9 @@ export default class Scene1 extends cc.Component {
 
   onLoad() {
     cc.log("onLoad")
-    this.infoLabel = this.node.getChildByName("info").getComponent(cc.Label)
+    this.infoLabel = this.node
+      .getChildByName("info-highlight")
+      .getComponent(cc.Label)
     this.progressBar.progress = 0
 
     this.listenKeydown()
