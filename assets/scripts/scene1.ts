@@ -3,24 +3,31 @@ const { ccclass, property } = cc._decorator
 @ccclass
 export default class Scene1 extends cc.Component {
   @property(cc.Sprite)
-  bgSprite: cc.Sprite
+  bgSprite: cc.Sprite = null
   @property(cc.SpriteFrame)
-  bgFrame1: cc.SpriteFrame
-  bgFrame2: cc.SpriteFrame
-  bgFrame3: cc.SpriteFrame
+  bgFrame1: cc.SpriteFrame = null
+  bgFrame2: cc.SpriteFrame = null
+  bgFrame3: cc.SpriteFrame = null
 
-  infoLabel: cc.Label
+  infoLabel: cc.Label = null
   @property(cc.ProgressBar)
-  progressBar: cc.ProgressBar
+  progressBar: cc.ProgressBar = null
   @property(cc.Prefab)
-  prefabOne: cc.Prefab
+  prefabOne: cc.Prefab = null
   @property(cc.AudioClip)
-  effectAc: cc.AudioClip
+  effectAc: cc.AudioClip = null
   @property(cc.AudioClip)
-  musicAc: cc.AudioClip
+  musicAc: cc.AudioClip = null
 
   @property({ type: sp.Skeleton, tooltip: "自定义提示文案" })
-  skeAnim: sp.Skeleton
+  skeAnim: sp.Skeleton = null
+
+  @property(cc.Sprite)
+  birdSprite: cc.Sprite = null
+  @property(cc.Sprite)
+  basketBallSprite: cc.Sprite = null
+  birdDirection: cc.Vec2 = null
+  birdSpeed: number = 3
 
   @property
   str: string = ""
@@ -33,19 +40,32 @@ export default class Scene1 extends cc.Component {
     cc.log("onLoad")
     this.infoLabel = this.node.getChildByName("info").getComponent(cc.Label)
     this.progressBar.progress = 0
+
+    this.listenKeydown()
   }
 
   start() {
     cc.log("start")
   }
 
-  // 1s 执行 60 次
+  /**
+   * 1、1s 执行 60 次，dt 大约为 0.016 秒（16 毫秒），但是人类大脑无法区分，大脑认为动画是连续的
+   * 2、帧率越高，操作系统负载越大，可以适当调低帧率 cc.game.setFrameRate(30)
+   * 3、注意：帧率是一个全局设置，所以最好在游戏的初始化脚本中设置。建一个 GameInitScript 挂在 Canvas 节点下
+   */
   update(dt: number) {
     let progress = this.progressBar.progress + dt / 5
     if (progress >= 1) {
       progress = 0
     }
     this.progressBar.progress = progress
+
+    if (this.birdDirection != null) {
+      let birdPosition = this.birdSprite.node.getPosition()
+      birdPosition.x += this.birdSpeed * this.birdDirection.x
+      birdPosition.y += this.birdSpeed * this.birdDirection.y
+      this.birdSprite.node.setPosition(birdPosition)
+    }
   }
 
   onBtnClick(target: cc.Event.EventTouch, data: string) {
@@ -152,6 +172,51 @@ export default class Scene1 extends cc.Component {
       this.skeAnim.clearTrack(0)
       this.skeAnim.setAnimation(0, "dead", false)
       this.skeAnim.addAnimation(0, "normalAttack", true, 2)
+    } else if (data === "update-bird-position") {
+      let position = this.birdSprite.node.getPosition()
+      position.addSelf(cc.v2(30, -30))
+      this.birdSprite.node.setPosition(position)
+    } else if (data === "bird-tween") {
+      let position = this.birdSprite.node.getPosition()
+      // 并发动作：位移、旋转同时进行
+      // cc.tween(this.birdSprite.node)
+      //   .to(1, {
+      //     position: cc.v3(position.x + 100, position.y - 100, 0),
+      //     rotation: 360
+      //   })
+      //   .start()
+
+      // 连续动作：先位移后旋转
+      cc.tween(this.birdSprite.node)
+        .to(
+          1,
+          {
+            position: cc.v3(position.x + 100, position.y - 100, 0)
+          },
+          { easing: "quadOut" }
+        )
+        .to(1, {
+          rotation: 360
+        })
+        .start()
+      // rotation 大于 0 是顺时针，angle 大于 0 是逆时针
+
+      // cc.tween(this.birdSprite.node)
+      //   .by(1, {
+      //     position: cc.v3(100, -100, 0)
+      //   })
+      //   .by(1, {
+      //     angle: -360
+      //   })
+      //   .start()
+    } else if (data === "basketball-tween") {
+      let h = 100
+      this.basketBallSprite.node.setPosition(cc.v2(0, -90))
+      cc.tween(this.basketBallSprite.node)
+        .by(0.5, { position: cc.v3(0, -h, 0) }, { easing: "quardIn" }) // 加速下降
+        .by(0.2, { position: cc.v3(0, h / 6, 0) }, { easing: "quardOut" }) // 减速上升
+        .by(0.2, { position: cc.v3(0, -h / 6, 0) }, { easing: "quardIn" }) // 加速下降
+        .start()
     }
   }
 
@@ -162,5 +227,30 @@ export default class Scene1 extends cc.Component {
      */
     cc.loader.releaseRes("img/bg2")
     cc.loader.release("http://bgashare.bingoogolapple.cn/banner/imgs/17.png")
+  }
+  listenKeydown = () => {
+    cc.systemEvent.on(
+      cc.SystemEvent.EventType.KEY_DOWN,
+      (e: cc.Event.EventKeyboard) => {
+        console.log(e)
+        switch (e.keyCode) {
+          case cc.macro.KEY.left:
+            this.birdDirection = cc.v2(-1, 0)
+            break
+          case cc.macro.KEY.up:
+            this.birdDirection = cc.v2(0, 1)
+            break
+          case cc.macro.KEY.right:
+            this.birdDirection = cc.v2(1, 0)
+            break
+          case cc.macro.KEY.down:
+            this.birdDirection = cc.v2(0, -1)
+            break
+          case cc.macro.KEY.space:
+            this.birdDirection = null
+            break
+        }
+      }
+    )
   }
 }
