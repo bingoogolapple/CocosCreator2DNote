@@ -186,6 +186,8 @@ export default class Scene1 extends cc.Component {
       cc.director.loadScene("scene7")
     } else if (data === "open-scene8") {
       cc.director.loadScene("scene8")
+    } else if (data === "open-scene9") {
+      cc.director.loadScene("scene9")
     } else if (data === "skeleton-run") {
       this.skeAnim.clearTrack(0)
       this.skeAnim.setAnimation(0, "run", true)
