@@ -1,0 +1,57 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "小鸟飞行动画",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 2,
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": 2,
+  "curveData": {
+    "props": {
+      "position": [
+        {
+          "frame": 0,
+          "value": [
+            -186,
+            255
+          ],
+          "motionPath": [
+            [
+              -102,
+              84,
+              -140,
+              84,
+              -58,
+              85
+            ],
+            [
+              -20,
+              295,
+              -75,
+              295,
+              9,
+              295
+            ],
+            [
+              56,
+              189,
+              23,
+              195,
+              109,
+              178
+            ]
+          ]
+        },
+        {
+          "frame": 2,
+          "value": [
+            177,
+            260
+          ]
+        }
+      ]
+    }
+  },
+  "events": []
+}

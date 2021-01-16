@@ -180,7 +180,7 @@
       "array": [
         0,
         0,
-        554.2562584220408,
+        413.9601430089617,
         0,
         0,
         0,
@@ -897,8 +897,12 @@
     "cannonSprite": {
       "__id__": 17
     },
-    "bulletFrame": null,
-    "explodeEffectFrame": null,
+    "bulletFrame": {
+      "__uuid__": "ba98aa0d-f2af-4ca4-910c-f48e52feb5c9"
+    },
+    "explodeEffectFrame": {
+      "__uuid__": "7e2aed89-9932-444f-b55d-93d9e3a8e75f"
+    },
     "_id": "ee/dAVERNLaayJdvwWVmFk"
   }
 ]

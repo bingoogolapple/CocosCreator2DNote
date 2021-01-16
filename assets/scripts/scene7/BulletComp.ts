@@ -26,7 +26,11 @@ export default class BulletComp extends cc.Component {
     cc.tween(this.node)
       .to(0.5, { scale: 0.5, opacity: 0 })
       .call(() => {
+        // 销毁子弹节点
         this.node.destroy()
+
+        // // this.node.removeFromParent() 这一句不需要调用，cc.NodePool.put 内部会自动调用
+        // Scene7.bulletPool.put(this.node) // 将节点放回到池子，就可以被重新利用了
       })
       .start()
   }
