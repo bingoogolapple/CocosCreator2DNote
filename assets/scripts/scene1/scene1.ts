@@ -240,6 +240,9 @@ export default class Scene1 extends cc.Component {
         .by(0.2, { position: cc.v3(0, h / 6, 0) }, { easing: "quardOut" }) // 减速上升
         .by(0.2, { position: cc.v3(0, -h / 6, 0) }, { easing: "quardIn" }) // 加速下降
         .start()
+    } else if (data === "rabbit-anim") {
+      let anim: cc.Animation = cc.find("Canvas/兔子").getComponent(cc.Animation)
+      let state: cc.AnimationState = anim.play()
     }
   }
 

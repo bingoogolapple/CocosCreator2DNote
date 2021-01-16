@@ -1,7 +1,7 @@
 const { ccclass, property } = cc._decorator
 
 @ccclass
-export default class NewClass extends cc.Component {
+export default class Info extends cc.Component {
   label: cc.Label = null
   text: string = null
   index: number = 0
