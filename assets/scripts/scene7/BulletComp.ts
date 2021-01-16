@@ -1,7 +1,7 @@
 const { ccclass, property } = cc._decorator
 
 @ccclass
-export default class BulletComponent extends cc.Component {
+export default class BulletComp extends cc.Component {
   explodeEffect: cc.SpriteFrame = null
 
   onLoad() {

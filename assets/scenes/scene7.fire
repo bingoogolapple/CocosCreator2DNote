@@ -180,7 +180,7 @@
       "array": [
         0,
         0,
-        412.2280922013928,
+        554.2562584220408,
         0,
         0,
         0,
@@ -744,7 +744,7 @@
       "__id__": 2
     },
     "component": "",
-    "_componentId": "4ab383oHkRP/ohKmMrDjEkk",
+    "_componentId": "294c3P2LyJFepSPccMihChG",
     "handler": "onBtnClick",
     "customEventData": "open-scene1"
   },
@@ -897,12 +897,8 @@
     "cannonSprite": {
       "__id__": 17
     },
-    "bulletIcon": {
-      "__uuid__": "ba98aa0d-f2af-4ca4-910c-f48e52feb5c9"
-    },
-    "explodeEffect": {
-      "__uuid__": "7e2aed89-9932-444f-b55d-93d9e3a8e75f"
-    },
+    "bulletFrame": null,
+    "explodeEffectFrame": null,
     "_id": "ee/dAVERNLaayJdvwWVmFk"
   }
 ]
