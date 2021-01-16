@@ -15,6 +15,12 @@ export default class Scene7 extends cc.Component {
   explodeEffectFrame: cc.SpriteFrame = null
 
   onLoad() {
+    let manager = cc.director.getCollisionManager()
+    // 开启碰撞管理
+    manager.enabled = true
+    // 展示碰撞体轮廓，发布时关闭
+    manager.enabledDebugDraw = true
+
     // for (let i = 0; i < 100; i++) {
     //   let node = cc.instantiate(this.bulletPrefab)
     //   Scene7.bulletPool.put(node)
