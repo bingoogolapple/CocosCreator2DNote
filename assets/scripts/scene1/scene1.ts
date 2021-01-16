@@ -44,6 +44,11 @@ export default class Scene1 extends cc.Component {
     this.progressBar.progress = 0
 
     this.listenKeydown()
+
+    this.scheduleOnce(() => {
+      this.getComponent(cc.AudioSource).stop()
+      cc.log("关闭 AudioSource")
+    }, 10)
   }
 
   start() {
@@ -154,7 +159,10 @@ export default class Scene1 extends cc.Component {
       cc.log("播放音效")
       let audioId = cc.audioEngine.playEffect(this.effectAc, false)
       cc.audioEngine.setEffectsVolume(0.5)
-      cc.audioEngine.stopEffect(audioId)
+      cc.audioEngine.setFinishCallback(audioId, () => {
+        cc.log("播放完毕")
+      })
+      // cc.audioEngine.stopEffect(audioId)
       // cc.audioEngine.stopAll()
       // cc.audioEngine.stopAllEffects()
       // cc.audioEngine.play(this.effectAc, false, 1) // 播放音频
