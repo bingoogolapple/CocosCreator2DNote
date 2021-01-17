@@ -12,6 +12,30 @@
       false,
       true,
       false
+    ],
+    [
+      false,
+      false,
+      false,
+      false,
+      null,
+      true
+    ],
+    [
+      false,
+      false,
+      false,
+      false,
+      false,
+      true
+    ],
+    [
+      false,
+      false,
+      false,
+      true,
+      true,
+      false
     ]
   ],
   "excluded-modules": [
@@ -23,7 +47,10 @@
   "group-list": [
     "default",
     "1-好人",
-    "1-坏人"
+    "1-坏人",
+    "2-玩家",
+    "2-子弹",
+    "2-目标"
   ],
   "design-resolution-width": 960,
   "design-resolution-height": 640,
