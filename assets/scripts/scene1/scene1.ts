@@ -61,11 +61,11 @@ export default class Scene1 extends cc.Component {
    * 3、注意：帧率是一个全局设置，所以最好在游戏的初始化脚本中设置。建一个 GameInitScript 挂在 Canvas 节点下
    */
   update(dt: number) {
-    let progress = this.progressBar.progress + dt / 5
-    if (progress >= 1) {
-      progress = 0
-    }
-    this.progressBar.progress = progress
+    // let progress = this.progressBar.progress + dt / 5
+    // if (progress >= 1) {
+    //   progress = 0
+    // }
+    // this.progressBar.progress = progress
 
     if (this.birdDirection != null) {
       let birdPosition = this.birdSprite.node.getPosition()
@@ -188,6 +188,14 @@ export default class Scene1 extends cc.Component {
       cc.director.loadScene("scene8")
     } else if (data === "open-scene9") {
       cc.director.loadScene("scene9")
+    } else if (data === "open-scene10") {
+      cc.director.loadScene("scene10")
+    } else if (data === "open-scene11") {
+      cc.director.loadScene("scene11")
+    } else if (data === "open-scene12") {
+      cc.director.loadScene("scene12")
+    } else if (data === "open-scene13") {
+      cc.director.loadScene("scene13")
     } else if (data === "skeleton-run") {
       this.skeAnim.clearTrack(0)
       this.skeAnim.setAnimation(0, "run", true)
@@ -243,6 +251,22 @@ export default class Scene1 extends cc.Component {
     } else if (data === "rabbit-anim") {
       let anim: cc.Animation = cc.find("Canvas/兔子").getComponent(cc.Animation)
       let state: cc.AnimationState = anim.play()
+    } else if (data === "preload-scene10") {
+      cc.director.preloadScene(
+        "scene10",
+        (current: number, count: number, item: any) => {
+          cc.log("加载进度：" + current + " " + count + " " + item)
+          this.progressBar.progress = current / count
+        },
+        (error: Error) => {
+          if (error) {
+            cc.log("预加载场景 10 失败", error)
+          } else {
+            cc.log("预加载场景 10 成功")
+            cc.director.loadScene("scene10")
+          }
+        }
+      )
     }
   }
 

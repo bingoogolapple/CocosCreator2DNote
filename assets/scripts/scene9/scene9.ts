@@ -35,12 +35,6 @@ export default class Scene9 extends cc.Component {
   // 当前答案
   private answer: string = null
 
-  onBtnClick(target: cc.Event.EventTouch, data: string) {
-    if (data === "open-scene1") {
-      cc.director.loadScene("scene1")
-    }
-  }
-
   onLoad() {
     Scene9.inst = this
 

@@ -11,10 +11,7 @@ export default class Scene2 extends cc.Component {
   passwordEb: cc.EditBox
 
   onBtnClick(target: cc.Event.EventTouch, data: string) {
-    cc.log(target)
-    if (data === "open-scene1") {
-      cc.director.loadScene("scene1")
-    } else if (data === "login") {
+    if (data === "login") {
       cc.log(
         `用户名：${this.usernameEb.string} 密码：${this.passwordEb.string}`
       )

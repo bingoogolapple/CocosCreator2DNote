@@ -54,10 +54,4 @@ export default class Scene7 extends cc.Component {
     let script: BulletComponent = bulletNode.addComponent(BulletComponent)
     script.explodeEffect = this.explodeEffectFrame
   }
-
-  onBtnClick(target: cc.Event.EventTouch, data: string) {
-    if (data === "open-scene1") {
-      cc.director.loadScene("scene1")
-    }
-  }
 }

@@ -29,9 +29,7 @@ export default class Scene4 extends cc.Component {
   }
 
   onBtnClick(target: cc.Event.EventTouch, data: string) {
-    if (data === "open-scene1") {
-      cc.director.loadScene("scene1")
-    } else if (data == "left") {
+    if (data == "left") {
       this.moveLeft()
     } else if (data == "right") {
       this.moveRight()
