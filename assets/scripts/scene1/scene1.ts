@@ -1,7 +1,13 @@
 const { ccclass, property } = cc._decorator
+import OpenScenePrefab from "../OpenScenePrefab"
 
 @ccclass
 export default class Scene1 extends cc.Component {
+  @property(cc.Prefab)
+  openScenePrefab: cc.Prefab = null
+  @property(cc.Node)
+  btnContainerNode: cc.Node = null
+
   @property(cc.Sprite)
   bgSprite: cc.Sprite = null
   @property(cc.SpriteFrame)
@@ -37,7 +43,11 @@ export default class Scene1 extends cc.Component {
   num: number = 0
 
   onLoad() {
+    // 如果某个节点在场景编辑器中默认设置的 active 为 false，则不会自动调用 onLoad 方法
     cc.log("onLoad")
+
+    this.addOpenSceneNodes()
+
     this.infoLabel = this.node
       .getChildByName("info-highlight")
       .getComponent(cc.Label)
@@ -49,6 +59,16 @@ export default class Scene1 extends cc.Component {
       this.getComponent(cc.AudioSource).stop()
       cc.log("关闭 AudioSource")
     }, 10)
+  }
+
+  addOpenSceneNodes() {
+    for (let i = 2; i <= 19; i++) {
+      let openSceneNode = cc.instantiate(this.openScenePrefab)
+      let openScenePrefabComponent = openSceneNode.getComponent(OpenScenePrefab)
+      openScenePrefabComponent.scenePostfix = i
+      cc.log(this.btnContainerNode, "btnContainerNode")
+      this.btnContainerNode.addChild(openSceneNode)
+    }
   }
 
   start() {
@@ -172,30 +192,6 @@ export default class Scene1 extends cc.Component {
       cc.audioEngine.setMusicVolume(0.2)
       // cc.audioEngine.isMusicPlaying()
       // cc.audioEngine.stopMusic()
-    } else if (data === "open-scene2") {
-      cc.director.loadScene("scene2")
-    } else if (data === "open-scene3") {
-      cc.director.loadScene("scene3")
-    } else if (data === "open-scene4") {
-      cc.director.loadScene("scene4")
-    } else if (data === "open-scene5") {
-      cc.director.loadScene("scene5")
-    } else if (data === "open-scene6") {
-      cc.director.loadScene("scene6")
-    } else if (data === "open-scene7") {
-      cc.director.loadScene("scene7")
-    } else if (data === "open-scene8") {
-      cc.director.loadScene("scene8")
-    } else if (data === "open-scene9") {
-      cc.director.loadScene("scene9")
-    } else if (data === "open-scene10") {
-      cc.director.loadScene("scene10")
-    } else if (data === "open-scene11") {
-      cc.director.loadScene("scene11")
-    } else if (data === "open-scene12") {
-      cc.director.loadScene("scene12")
-    } else if (data === "open-scene13") {
-      cc.director.loadScene("scene13")
     } else if (data === "skeleton-run") {
       this.skeAnim.clearTrack(0)
       this.skeAnim.setAnimation(0, "run", true)
