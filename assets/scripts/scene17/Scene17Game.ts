@@ -15,6 +15,13 @@ export default class Scene17Game extends cc.Component {
   @property(cc.Node)
   rectNode: cc.Node = null
 
+  // 获奖者1
+  @property(cc.Label)
+  winner1Label: cc.Label = null
+  // 获奖者2
+  @property(cc.Label)
+  winner2Label: cc.Label = null
+
   // 圆形转盘中奖概率
   circleProbabilityArr: number[] = [
     30,
@@ -74,6 +81,25 @@ export default class Scene17Game extends cc.Component {
   // 矩形转盘当前选中索引
   currentRectIndex: number = 0
 
+  allPrizeArr: string[] = [
+    "10元话费",
+    "雨伞",
+    "富光水杯",
+    "小爱同学",
+    "旅游背包",
+    "oppo手机",
+    "体重秤",
+    "现金红包",
+    "房卡",
+    "手机支架",
+    "充电宝",
+    "iPhone 11",
+    "20G流量",
+    "50元红包",
+    "5元红包",
+    "30元话费"
+  ]
+
   onLoad() {
     let containerNode = cc.find("container-inner", this.rectNode)
     for (let i = 0; i < Scene17Game.RECT_ITEM_COUNT; i++) {
@@ -81,6 +107,10 @@ export default class Scene17Game extends cc.Component {
         cc.find(i.toString(), containerNode).getComponent(Scene17RectItem)
       )
     }
+
+    this.updateWinnerInfo(this.winner1Label)
+    this.updateWinnerInfo(this.winner2Label)
+    this.startWinnerAnim()
   }
 
   changeToCircle() {
@@ -220,5 +250,67 @@ export default class Scene17Game extends cc.Component {
         this.rectItemArr[this.currentRectIndex].flag.active = true
       }
     }
+  }
+
+  // 启动中奖名单的滚动动画
+  private startWinnerAnim() {
+    let parentHeight = this.winner1Label.node.parent.height
+    let x = this.winner1Label.node.getPosition().x
+    this.winner1Label.node.y = 0
+    this.winner2Label.node.y = -parentHeight
+
+    {
+      // 玩家1的动作
+      // 0~1.0：0
+      let act_1 = cc.delayTime(1)
+      //【1.0~1.5】：0 => parentHeight
+      let act_2 = cc.moveTo(0.5, cc.v2(x, parentHeight))
+      // 1.5~2.5：parentHeight
+      let act_3 = cc.delayTime(1)
+      // 2.5：-parentHeight
+      let act_4 = cc.callFunc(() => {
+        this.winner1Label.node.y = -parentHeight
+        this.updateWinnerInfo(this.winner1Label)
+      })
+      //【2.5~3.0】：-parentHeight => 0
+      let act_5 = cc.moveTo(0.5, cc.v2(x, 0))
+
+      let seq = cc.sequence(act_1, act_2, act_3, act_4, act_5)
+      this.winner1Label.node.runAction(cc.repeatForever(seq))
+    }
+
+    {
+      // 玩家2的动作
+      // 0~1.0：-parentHeight
+      let act_1 = cc.delayTime(1)
+      //【1.0~1.5】：-parentHeight => 0
+      let act_2 = cc.moveTo(0.5, cc.v2(x, 0))
+      // 1.5~2.5：0
+      let act_3 = cc.delayTime(1)
+      //【2.5~3.0】：0 => parentHeight
+      let act_4 = cc.moveTo(0.5, cc.v2(x, parentHeight))
+      // 3.0：-parentHeight
+      let act_5 = cc.callFunc(() => {
+        this.winner2Label.node.y = -parentHeight
+        this.updateWinnerInfo(this.winner2Label)
+      })
+
+      let seq = cc.sequence(act_1, act_2, act_3, act_4, act_5)
+      this.winner2Label.node.runAction(cc.repeatForever(seq))
+    }
+  }
+
+  private updateWinnerInfo(winnerLabel: cc.Label) {
+    let phonePrefix = Math.floor(Math.random() * 100) // 0-99
+    let phonePreDesc = phonePrefix.toString().padEnd(2, "0")
+
+    let phonePostfix = Math.floor(Math.random() * 10000) // 0-9999
+    let phonePostDesc = phonePostfix.toString().padStart(4, "0")
+
+    let prize = this.allPrizeArr[
+      Math.floor(Math.random() * this.allPrizeArr.length)
+    ]
+
+    winnerLabel.string = `恭喜玩家 1${phonePreDesc}****${phonePostDesc} 抽中 ${prize} 奖品`
   }
 }

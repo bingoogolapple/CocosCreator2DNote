@@ -468,7 +468,7 @@
         "__id__": 68
       }
     ],
-    "_active": false,
+    "_active": true,
     "_components": [],
     "_prefab": null,
     "_opacity": 255,
@@ -3489,7 +3489,7 @@
         "__id__": 207
       }
     ],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 261
@@ -12582,8 +12582,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 120,
-      "height": 37.8
+      "width": 100,
+      "height": 31.5
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -12636,8 +12636,8 @@
     "_dstBlendFactor": 771,
     "_string": "中奖名单",
     "_N$string": "中奖名单",
-    "_fontSize": 30,
-    "_lineHeight": 30,
+    "_fontSize": 25,
+    "_lineHeight": 25,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
@@ -12681,7 +12681,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "item1",
+    "_name": "winner1",
     "_objFlags": 0,
     "_parent": {
       "__id__": 262
@@ -12707,8 +12707,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 386.81,
-      "height": 37.8
+      "width": 439.03,
+      "height": 31.5
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -12719,7 +12719,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -145,
+        -170,
         0,
         0,
         0,
@@ -12759,10 +12759,10 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "恭喜玩家1****1抽中oppo手机",
-    "_N$string": "恭喜玩家1****1抽中oppo手机",
-    "_fontSize": 30,
-    "_lineHeight": 30,
+    "_string": "恭喜玩家 134****1821 抽中 充电宝 奖品",
+    "_N$string": "恭喜玩家 134****1821 抽中 充电宝 奖品",
+    "_fontSize": 25,
+    "_lineHeight": 25,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
@@ -12788,7 +12788,7 @@
     "alignMode": 1,
     "_target": null,
     "_alignFlags": 8,
-    "_left": 170,
+    "_left": 145,
     "_right": 0,
     "_top": 0,
     "_bottom": 0,
@@ -12806,7 +12806,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "item2",
+    "_name": "winner2",
     "_objFlags": 0,
     "_parent": {
       "__id__": 262
@@ -12832,8 +12832,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 386.81,
-      "height": 37.8
+      "width": 439.03,
+      "height": 31.5
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -12844,7 +12844,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -145,
+        -170,
         -49,
         0,
         0,
@@ -12884,10 +12884,10 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "恭喜玩家2****2抽中oppo手机",
-    "_N$string": "恭喜玩家2****2抽中oppo手机",
-    "_fontSize": 30,
-    "_lineHeight": 30,
+    "_string": "恭喜玩家 176****6982 抽中 充电宝 奖品",
+    "_N$string": "恭喜玩家 176****6982 抽中 充电宝 奖品",
+    "_fontSize": 25,
+    "_lineHeight": 25,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
@@ -12913,7 +12913,7 @@
     "alignMode": 1,
     "_target": null,
     "_alignFlags": 8,
-    "_left": 170,
+    "_left": 145,
     "_right": 0,
     "_top": 0,
     "_bottom": 0,
@@ -14423,11 +14423,17 @@
     "circleNode": {
       "__id__": 9
     },
+    "turntableNode": {
+      "__id__": 12
+    },
     "rectNode": {
       "__id__": 72
     },
-    "turntableNode": {
-      "__id__": 12
+    "winner1Label": {
+      "__id__": 269
+    },
+    "winner2Label": {
+      "__id__": 272
     },
     "_id": "1c5cuQAS5EhaiuQXLR/R5F"
   }
