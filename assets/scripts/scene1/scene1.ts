@@ -239,10 +239,13 @@ export default class Scene1 extends cc.Component {
     } else if (data === "basketball-tween") {
       let h = 100
       this.basketBallSprite.node.setPosition(cc.v2(0, -90))
+      // https://docs.cocos.com/creator/manual/zh/scripting/tween.html
+      // https://docs.cocos.com/creator/api/zh/classes/Easing.html
+      // https://easings.net
       cc.tween(this.basketBallSprite.node)
-        .by(0.5, { position: cc.v3(0, -h, 0) }, { easing: "quardIn" }) // 加速下降
-        .by(0.2, { position: cc.v3(0, h / 6, 0) }, { easing: "quardOut" }) // 减速上升
-        .by(0.2, { position: cc.v3(0, -h / 6, 0) }, { easing: "quardIn" }) // 加速下降
+        .by(0.5, { position: cc.v3(0, -h, 0) }, { easing: "quadIn" }) // 加速下降
+        .by(0.2, { position: cc.v3(0, h / 6, 0) }, { easing: "quadOut" }) // 减速上升
+        .by(0.2, { position: cc.v3(0, -h / 6, 0) }, { easing: "quadIn" }) // 加速下降
         .start()
     } else if (data === "rabbit-anim") {
       let anim: cc.Animation = cc.find("Canvas/兔子").getComponent(cc.Animation)
