@@ -66,7 +66,6 @@ export default class Scene1 extends cc.Component {
       let openSceneNode = cc.instantiate(this.openScenePrefab)
       let openScenePrefabComponent = openSceneNode.getComponent(OpenScenePrefab)
       openScenePrefabComponent.scenePostfix = i
-      cc.log(this.btnContainerNode, "btnContainerNode")
       this.btnContainerNode.addChild(openSceneNode)
     }
   }
@@ -282,7 +281,7 @@ export default class Scene1 extends cc.Component {
     cc.systemEvent.on(
       cc.SystemEvent.EventType.KEY_DOWN,
       (e: cc.Event.EventKeyboard) => {
-        console.log(e)
+        cc.log(e)
         switch (e.keyCode) {
           case cc.macro.KEY.left:
             this.birdDirection = cc.v2(-1, 0)

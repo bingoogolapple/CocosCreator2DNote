@@ -130,7 +130,7 @@ export default class Scene17Game extends cc.Component {
 
     this.isCirclePlaying = true
     let probabilityIndex = this.getProbabilityIndex(this.circleProbabilityArr)
-    console.log(
+    cc.log(
       `抽中的是：${probabilityIndex} 奖品是：${this.circlePrizeArr[probabilityIndex]}`
     )
 
@@ -204,7 +204,7 @@ export default class Scene17Game extends cc.Component {
     this.rectProbabilityIndex = this.getProbabilityIndex(
       this.rectProbabilityArr
     )
-    console.log(
+    cc.log(
       `抽中的是：${this.rectProbabilityIndex} 奖品是：${
         this.rectPrizeArr[this.rectProbabilityIndex]
       }`
