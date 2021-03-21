@@ -1,4 +1,4 @@
-# Cocos Creator 学习笔记
+# Cocos Creator 2D 学习笔记
 
 ## 自动编译并刷新
 
