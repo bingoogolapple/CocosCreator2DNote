@@ -1,0 +1,138 @@
+[
+  {
+    "__type__": "cc.AnimationClip",
+    "_name": "兔子动画",
+    "_objFlags": 0,
+    "_native": "",
+    "sample": 60,
+    "speed": 0.1,
+    "wrapMode": 1,
+    "_duration": 0.26666666666666666,
+    "_hash": 0,
+    "_tracks": [
+      {
+        "__id__": 1
+      }
+    ],
+    "_events": [],
+    "_exoticAnimation": null
+  },
+  {
+    "__type__": "cc.animation.ObjectTrack",
+    "_binding": {
+      "__type__": "cc.animation.TrackBinding",
+      "path": {
+        "__id__": 2
+      }
+    },
+    "_channel": {
+      "__id__": 4
+    }
+  },
+  {
+    "__type__": "cc.animation.TrackPath",
+    "_paths": [
+      {
+        "__id__": 3
+      },
+      "spriteFrame"
+    ]
+  },
+  {
+    "__type__": "cc.animation.ComponentPath",
+    "component": "cc.Sprite"
+  },
+  {
+    "__type__": "cc.animation.Channel",
+    "_curve": {
+      "__id__": 5
+    }
+  },
+  {
+    "__type__": "cc.ObjectCurve",
+    "_times": [
+      0,
+      0.016666666666666666,
+      0.03333333333333333,
+      0.05,
+      0.06666666666666667,
+      0.08333333333333333,
+      0.1,
+      0.11666666666666667,
+      0.13333333333333333,
+      0.15,
+      0.16666666666666666,
+      0.18333333333333332,
+      0.2,
+      0.21666666666666667,
+      0.23333333333333334,
+      0.25
+    ],
+    "_values": [
+      {
+        "__uuid__": "d72291a9-df82-4041-8ab9-9a743b244e42@f9941",
+        "__expectedType__": "cc.Asset"
+      },
+      {
+        "__uuid__": "f0bf9e6b-9ba4-471d-8782-294aca2c9f8b@f9941",
+        "__expectedType__": "cc.Asset"
+      },
+      {
+        "__uuid__": "a5b10ce3-2cf1-488c-ba4a-178ba6d9c3ca@f9941",
+        "__expectedType__": "cc.Asset"
+      },
+      {
+        "__uuid__": "12597d6e-6f6d-48a5-b4e8-9da71c1e6502@f9941",
+        "__expectedType__": "cc.Asset"
+      },
+      {
+        "__uuid__": "79c18e44-f483-47d1-b26a-d0a053b5274a@f9941",
+        "__expectedType__": "cc.Asset"
+      },
+      {
+        "__uuid__": "45f74e29-11ce-473c-8ebc-bdb96a680e7d@f9941",
+        "__expectedType__": "cc.Asset"
+      },
+      {
+        "__uuid__": "0fa1815f-135d-4033-8560-9631351207ab@f9941",
+        "__expectedType__": "cc.Asset"
+      },
+      {
+        "__uuid__": "3ee8aafd-12c3-45c5-8820-3e1d3f05d8dd@f9941",
+        "__expectedType__": "cc.Asset"
+      },
+      {
+        "__uuid__": "620759a9-9579-4206-ba0b-34e27e62a2ff@f9941",
+        "__expectedType__": "cc.Asset"
+      },
+      {
+        "__uuid__": "cda5a997-c020-46ff-b768-220f860feda5@f9941",
+        "__expectedType__": "cc.Asset"
+      },
+      {
+        "__uuid__": "4f58d690-25d7-4ef8-840a-17c589f6acf5@f9941",
+        "__expectedType__": "cc.Asset"
+      },
+      {
+        "__uuid__": "65eb40be-f0e9-40a0-b0b3-bdc0d0cb2622@f9941",
+        "__expectedType__": "cc.Asset"
+      },
+      {
+        "__uuid__": "fcad19f7-e872-40bc-8761-331e76189613@f9941",
+        "__expectedType__": "cc.Asset"
+      },
+      {
+        "__uuid__": "e8a40556-5aa7-4baa-87c2-611c3363f834@f9941",
+        "__expectedType__": "cc.Asset"
+      },
+      {
+        "__uuid__": "3a9a6558-4323-428c-976e-38ca0161cd9e@f9941",
+        "__expectedType__": "cc.Asset"
+      },
+      {
+        "__uuid__": "efa76812-57b1-4d45-a920-2c5c7dcd5057@f9941",
+        "__expectedType__": "cc.Asset"
+      }
+    ]
+  }
+]

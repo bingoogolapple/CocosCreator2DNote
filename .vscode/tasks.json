@@ -4,9 +4,9 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "compile",
+      "label": "Cocos Creator compile",
       "command": "curl",
-      "args": ["http://localhost:7456/update-db"],
+      "args": ["http://localhost:7456/asset-db/refresh"],
       "type": "shell",
       "isBackground": true,
       "group": "build",
@@ -16,16 +16,16 @@
       "problemMatcher": []
     },
     {
-      "label": "autorefresh",
+      "label": "Cocos Creator auto compile",
       "type": "shell",
       "command": "nodemon",
       "args": [
         "--watch",
         "assets/scripts",
         "--ext",
-        "js ts",
+        "ts",
         "--exec",
-        "curl http://localhost:7456/update-db"
+        "curl http://localhost:7456/asset-db/refresh"
       ],
       "isBackground": true,
       "group": "build",

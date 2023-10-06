@@ -1,0 +1,134 @@
+{
+  "ver": "1.0.26",
+  "importer": "image",
+  "imported": true,
+  "uuid": "c055a788-19f4-4657-8ef5-4de31a7b7c8e",
+  "files": [
+    ".json",
+    ".png"
+  ],
+  "subMetas": {
+    "6c48a": {
+      "importer": "texture",
+      "uuid": "c055a788-19f4-4657-8ef5-4de31a7b7c8e@6c48a",
+      "displayName": "怪物2",
+      "id": "6c48a",
+      "name": "texture",
+      "userData": {
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "wrapModeT": "clamp-to-edge",
+        "wrapModeS": "clamp-to-edge",
+        "mipfilter": "none",
+        "imageUuidOrDatabaseUri": "c055a788-19f4-4657-8ef5-4de31a7b7c8e",
+        "isUuid": true,
+        "visible": false,
+        "anisotropy": 0
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "f9941": {
+      "importer": "sprite-frame",
+      "uuid": "c055a788-19f4-4657-8ef5-4de31a7b7c8e@f9941",
+      "displayName": "怪物2",
+      "id": "f9941",
+      "name": "spriteFrame",
+      "userData": {
+        "trimType": "auto",
+        "trimThreshold": 1,
+        "rotated": false,
+        "offsetX": 0.5,
+        "offsetY": -7.5,
+        "trimX": 6,
+        "trimY": 15,
+        "width": 69,
+        "height": 65,
+        "rawWidth": 80,
+        "rawHeight": 80,
+        "borderTop": 0,
+        "borderBottom": 0,
+        "borderLeft": 0,
+        "borderRight": 0,
+        "imageUuidOrDatabaseUri": "c055a788-19f4-4657-8ef5-4de31a7b7c8e@6c48a",
+        "packable": true,
+        "pixelsToUnit": 100,
+        "pivotX": 0.5,
+        "pivotY": 0.5,
+        "meshType": 0,
+        "vertices": {
+          "rawPosition": [
+            -34.5,
+            -32.5,
+            0,
+            34.5,
+            -32.5,
+            0,
+            -34.5,
+            32.5,
+            0,
+            34.5,
+            32.5,
+            0
+          ],
+          "indexes": [
+            0,
+            1,
+            2,
+            2,
+            1,
+            3
+          ],
+          "uv": [
+            6,
+            65,
+            75,
+            65,
+            6,
+            0,
+            75,
+            0
+          ],
+          "nuv": [
+            0.075,
+            0,
+            0.9375,
+            0,
+            0.075,
+            0.8125,
+            0.9375,
+            0.8125
+          ],
+          "minPos": [
+            -34.5,
+            -32.5,
+            0
+          ],
+          "maxPos": [
+            34.5,
+            32.5,
+            0
+          ]
+        },
+        "isUuid": true,
+        "atlasUuid": ""
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "type": "sprite-frame",
+    "fixAlphaTransparencyArtifacts": false,
+    "hasAlpha": true,
+    "redirect": "c055a788-19f4-4657-8ef5-4de31a7b7c8e@f9941"
+  }
+}
